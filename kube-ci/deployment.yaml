@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafkadatagen-deployment
+  labels:
+    app: kafkadatagen
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafkadatagen
+  template:
+    metadata:
+      labels:
+        app: kafkadatagen
+    spec:
+      containers:
+      - name: kafkadatagen
+        image: chaitanyaphalak/kafkadatagen:1.0-4-gca7f6d8
